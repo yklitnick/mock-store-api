@@ -1,8 +1,11 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
-const connectDB = require('./db/connect');
-const Product = require('./models/product');
+import connectDB from './db/connect.js';
+import Product from './models/product.js';
 
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 const jsonProducts = require('./products.json');
 
 const start = async () => {

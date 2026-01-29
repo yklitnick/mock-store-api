@@ -1,4 +1,4 @@
-const Product = require('../models/product');
+import Product from '../models/product.js';
 
 const getAllProductsStatic = async (req, res) => {
     const products = await Product.find({ price: { $gt: 30 } })
@@ -63,7 +63,4 @@ const getAllProducts = async (req, res) => {
     res.status(200).json({ products, nbHits: products.length });
 };
 
-module.exports = {
-    getAllProductsStatic,
-    getAllProducts,
-};
+export { getAllProductsStatic, getAllProducts };

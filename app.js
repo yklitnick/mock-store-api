@@ -1,13 +1,14 @@
-require('dotenv').config();
-require('express-async-errors');
+import dotenv from 'dotenv';
+dotenv.config();
+import 'express-async-errors';
 
-const express = require('express');
+import express from 'express';
 const app = express();
 app.disable('X-Powered-By');
-const connectDB = require('./db/connect');
-const productsRouter = require('./routes/products');
-const notFound = require('./middleware/not-found');
-const errorHandler = require('./middleware/error-handler');
+import connectDB from './db/connect.js';
+import productsRouter from './routes/products.js';
+import notFound from './middleware/not-found.js';
+import errorHandler from './middleware/error-handler.js';
 
 // middleware
 app.use(express.json());

@@ -5,4 +5,4 @@ const errorHandler = async (err, req, res, next) => {
         .json({ msg: 'Something went wrong, please try again' });
 };
 
-module.exports = errorHandler;
+export default errorHandler;
